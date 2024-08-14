@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Plot Generator</h1>
+      <h1>Life Portfolio</h1>
       <PlotForm onSubmit={handleFormSubmit} />
       {data.x.length > 0 && <Plot xData={data.x} yData={data.y} />}
     </div>
