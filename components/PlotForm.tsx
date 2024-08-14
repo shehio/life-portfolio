@@ -1,11 +1,15 @@
-// components/PlotForm.js
-import { useState } from 'react';
+// components/PlotForm.tsx
+import React, { useState } from 'react';
 
-export default function PlotForm({ onSubmit }) {
-  const [xValues, setXValues] = useState('');
-  const [yValues, setYValues] = useState('');
+interface PlotFormProps {
+  onSubmit: (xValues: number[], yValues: number[]) => void;
+}
 
-  const handleSubmit = (e) => {
+const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
+  const [xValues, setXValues] = useState<string>('');
+  const [yValues, setYValues] = useState<string>('');
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const xArray = xValues.split(',').map(Number);
     const yArray = yValues.split(',').map(Number);
@@ -35,4 +39,6 @@ export default function PlotForm({ onSubmit }) {
       <button type="submit">Generate Plot</button>
     </form>
   );
-}
+};
+
+export default PlotForm;
