@@ -26,7 +26,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <h4>Faith</h4>
         <label className="mr-2">
-          X1:
+          How Important? (1 to 10):
           <input
             type="text"
             value={x1}
@@ -35,7 +35,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
           />
         </label>
         <label className="mr-2">
-          Y1:
+        How Satisified? (1 to 10):
           <input
             type="text"
             value={y1}
@@ -47,7 +47,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <h4>Family</h4>
         <label className="mr-2">
-          X2:
+        How Important? (1 to 10):
           <input
             type="text"
             value={x2}
@@ -56,7 +56,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
           />
         </label>
         <label className="mr-2">
-          Y2:
+        How Satisified? (1 to 10):
           <input
             type="text"
             value={y2}
@@ -68,7 +68,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
       <div className="form-group">
         <h4>Sports</h4>
         <label className="mr-2">
-          X3:
+        How Important? (1 to 10):
           <input
             type="text"
             value={x3}
@@ -77,7 +77,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
           />
         </label>
         <label className="mr-2">
-          Y3:
+        How Satisified? (1 to 10):
           <input
             type="text"
             value={y3}
