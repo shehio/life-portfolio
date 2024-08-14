@@ -24,7 +24,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
     <form onSubmit={handleSubmit} className="p-3">
       <h3>Strategic Life Units</h3>
       <div className="form-group">
-        <h4>Point 1</h4>
+        <h4>Faith</h4>
         <label className="mr-2">
           X1:
           <input
@@ -45,7 +45,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
         </label>
       </div>
       <div className="form-group">
-        <h4>Point 2</h4>
+        <h4>Family</h4>
         <label className="mr-2">
           X2:
           <input
@@ -66,7 +66,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
         </label>
       </div>
       <div className="form-group">
-        <h4>Point 3</h4>
+        <h4>Sports</h4>
         <label className="mr-2">
           X3:
           <input
