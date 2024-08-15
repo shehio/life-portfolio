@@ -22,7 +22,7 @@ const LifeUnitSection: React.FC<LifeUnitSectionProps> = ({
     <div className="form-group mb-3">
       <h4 className="mb-3">{title}</h4>
       <div className="row mb-2">
-        <div className="col-md-4">
+        <div className="col-md-2">
           <label className="form-label">
             How Important?
             <select
@@ -38,7 +38,7 @@ const LifeUnitSection: React.FC<LifeUnitSectionProps> = ({
             </select>
           </label>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-2">
           <label className="form-label">
             How Satisfied?
             <select
