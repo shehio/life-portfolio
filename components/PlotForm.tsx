@@ -1,5 +1,5 @@
-// components/PlotForm.tsx
 import React, { useState } from 'react';
+import LifeUnitSection from './LifeUnitSection';
 
 interface PlotFormProps {
   onSubmit: (xValues: number[], yValues: number[]) => void;
@@ -21,72 +21,30 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-3">
-      <h3>Strategic Life Units</h3>
-      <div className="form-group">
-        <h4>Faith</h4>
-        <label className="mr-2">
-          How Important? (1 to 10):
-          <input
-            type="text"
-            value={x1}
-            onChange={(e) => setX1(e.target.value)}
-            className="form-control d-inline-block w-auto ml-2"
-          />
-        </label>
-        <label className="mr-2">
-        How Satisified? (1 to 10):
-          <input
-            type="text"
-            value={y1}
-            onChange={(e) => setY1(e.target.value)}
-            className="form-control d-inline-block w-auto ml-2"
-          />
-        </label>
-      </div>
-      <div className="form-group">
-        <h4>Family</h4>
-        <label className="mr-2">
-        How Important? (1 to 10):
-          <input
-            type="text"
-            value={x2}
-            onChange={(e) => setX2(e.target.value)}
-            className="form-control d-inline-block w-auto ml-2"
-          />
-        </label>
-        <label className="mr-2">
-        How Satisified? (1 to 10):
-          <input
-            type="text"
-            value={y2}
-            onChange={(e) => setY2(e.target.value)}
-            className="form-control d-inline-block w-auto ml-2"
-          />
-        </label>
-      </div>
-      <div className="form-group">
-        <h4>Sports</h4>
-        <label className="mr-2">
-        How Important? (1 to 10):
-          <input
-            type="text"
-            value={x3}
-            onChange={(e) => setX3(e.target.value)}
-            className="form-control d-inline-block w-auto ml-2"
-          />
-        </label>
-        <label className="mr-2">
-        How Satisified? (1 to 10):
-          <input
-            type="text"
-            value={y3}
-            onChange={(e) => setY3(e.target.value)}
-            className="form-control d-inline-block w-auto ml-2"
-          />
-        </label>
-      </div>
-      <button type="submit" className="btn btn-primary">Generate Plot</button>
+    <form onSubmit={handleSubmit} className="p-4">
+      <h3 className="mb-4">Strategic Life Units</h3>
+      <LifeUnitSection
+        title="Faith"
+        importanceValue={x1}
+        satisfactionValue={y1}
+        onImportanceChange={(e) => setX1(e.target.value)}
+        onSatisfactionChange={(e) => setY1(e.target.value)}
+      />
+      <LifeUnitSection
+        title="Family"
+        importanceValue={x2}
+        satisfactionValue={y2}
+        onImportanceChange={(e) => setX2(e.target.value)}
+        onSatisfactionChange={(e) => setY2(e.target.value)}
+      />
+      <LifeUnitSection
+        title="Sports"
+        importanceValue={x3}
+        satisfactionValue={y3}
+        onImportanceChange={(e) => setX3(e.target.value)}
+        onSatisfactionChange={(e) => setY3(e.target.value)}
+      />
+      <button type="submit" className="btn btn-primary mt-3">Generate Plot</button>
     </form>
   );
 };
