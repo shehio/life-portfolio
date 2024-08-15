@@ -24,7 +24,7 @@ const LifeUnitSection: React.FC<LifeUnitSectionProps> = ({
       <div className="row mb-2">
         <div className="col-md-4">
           <label className="form-label">
-            How Important? (1 to 10):
+            How Important?
             <select
               value={importanceValue}
               onChange={onImportanceChange}
@@ -40,7 +40,7 @@ const LifeUnitSection: React.FC<LifeUnitSectionProps> = ({
         </div>
         <div className="col-md-4">
           <label className="form-label">
-            How Satisfied? (1 to 10):
+            How Satisfied?
             <select
               value={satisfactionValue}
               onChange={onSatisfactionChange}
