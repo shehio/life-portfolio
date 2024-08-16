@@ -7,12 +7,12 @@ interface PlotFormProps {
 
 const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
-    x: ['', '', ''],
-    y: ['', '', ''],
-    hours: ['', '', '']
+    x: ['', '', '', '', '', ''],
+    y: ['', '', '', '', '', ''],
+    hours: ['', '', '', '', '', '']
   });
 
-  const labels = ['Faith', 'Family', 'Sports'];
+  const labels = ['Partner', 'Faith', 'Family', 'Sports', 'Career', 'Hobbies'];
 
   const handleChange = (type: 'x' | 'y' | 'hours', index: number, value: string) => {
     setFormData((prevData) => {

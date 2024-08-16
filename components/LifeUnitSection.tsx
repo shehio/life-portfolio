@@ -24,7 +24,7 @@ const LifeUnitSection: React.FC<LifeUnitSectionProps> = ({
 
   return (
     <div className="form-group mb-3">
-      <h4 className="mb-3">{title}</h4>
+      <h5 className="mb-3">{title}</h5>
       <div className="row mb-2">
         <div className="col-md-2">
           <label className="form-label">
