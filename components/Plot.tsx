@@ -28,7 +28,7 @@ const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels }
           title: 'Importance',
         },
         yaxis: {
-          title: 'Satisfaction', // Set your y-axis label here
+          title: 'Satisfaction',
         },
       }}
     />
