@@ -10,13 +10,37 @@ interface Data {
   y: number[];
   marker: number[];
   labels: string[];
+  colors: string[];
 }
 
 export default function Home() {
-  const [data, setData] = useState<Data>({ x: [], y: [], marker:[], labels:[] });
+  const [data, setData] = useState<Data>({ x: [], y: [], marker:[], labels:[], colors:[] });
 
   const handleFormSubmit = (xValues: number[], yValues: number[], hoursValues: number[], labels: string[]) => {
-    setData({ x: xValues, y: yValues, marker: hoursValues, labels:  labels});
+    const calculateAverages = (values: number[]): number => {
+      return values.reduce((sum, value) => sum + value, 0) / values.length;
+    };
+  
+    const averageX = calculateAverages(xValues);
+    const averageY = calculateAverages(yValues);
+  
+    const getColorsBasedOnQuadrants = (xValues: number[], yValues: number[], avgX: number, avgY: number): string[] => {
+      return xValues.map((x, index) => {
+        const y = yValues[index];
+        if (x >= avgX && y >= avgY) {
+          return 'green';  // upper right
+        } else if (x < avgX && y >= avgY) {
+          return 'blue';   // upper left
+        } else if (x < avgX && y < avgY) {
+          return 'red';    // lower left
+        } else {
+          return 'orange'; // lower right
+        }
+      });
+    };
+  
+    const colors = getColorsBasedOnQuadrants(xValues, yValues, averageX, averageY);
+    setData({ x: xValues, y: yValues, marker: hoursValues, labels: labels, colors: colors });
   };
 
   return (
@@ -30,7 +54,7 @@ export default function Home() {
   {data.x.length > 0 && (
     <div className="row justify-content-center mt-4">
       <div className="col-md-12">
-        <Plot xData={data.x} yData={data.y} markerData={data.marker} labels={data.labels} />
+        <Plot xData={data.x} yData={data.y} markerData={data.marker} labels={data.labels} colors={data.colors} />
       </div>
     </div>
   )}

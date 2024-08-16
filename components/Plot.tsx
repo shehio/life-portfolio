@@ -5,9 +5,10 @@ interface PlotProps {
   yData: number[];
   markerData: number[];
   labels: string[];
+  colors: string[];
 }
 
-const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels }) => {
+const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels, colors }) => {
   return (
     <Plot
       data={[
@@ -19,7 +20,7 @@ const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels }
           text: labels,
           marker: {
             size: markerData,
-            color: 'red'
+            color: colors
           },
         },
       ]}
