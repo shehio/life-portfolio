@@ -19,10 +19,20 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Life Portfolio</h1>
+    <div className="container">
+  <h1 className="display-4 text-center col-md-5">Life Portfolio</h1>
+  <div className="row justify-content-center">
+    <div className="col-md-10">
       <PlotForm onSubmit={handleFormSubmit} />
-      {data.x.length > 0 && <Plot xData={data.x} yData={data.y} markerData={data.marker} />}
     </div>
+  </div>
+  {data.x.length > 0 && (
+    <div className="row justify-content-center mt-4">
+      <div className="col-md-12">
+        <Plot xData={data.x} yData={data.y} markerData={data.marker} />
+      </div>
+    </div>
+  )}
+</div>
   );
 }
