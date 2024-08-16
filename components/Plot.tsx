@@ -20,7 +20,17 @@ const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels }
           marker: { size: markerData },
         },
       ]}
-      layout={{ width: 800, height: 600, title: 'Life!' }}
+      layout={{
+        width: 800,
+        height: 600,
+        title: 'Life!',
+        xaxis: {
+          title: 'Importance',
+        },
+        yaxis: {
+          title: 'Satisfaction', // Set your y-axis label here
+        },
+      }}
     />
   );
 };
