@@ -9,13 +9,14 @@ interface Data {
   x: number[];
   y: number[];
   marker: number[];
+  labels: string[];
 }
 
 export default function Home() {
-  const [data, setData] = useState<Data>({ x: [], y: [], marker:[] });
+  const [data, setData] = useState<Data>({ x: [], y: [], marker:[], labels:[] });
 
-  const handleFormSubmit = (xValues: number[], yValues: number[], hoursValues: number[]) => {
-    setData({ x: xValues, y: yValues, marker: hoursValues });
+  const handleFormSubmit = (xValues: number[], yValues: number[], hoursValues: number[], labels: string[]) => {
+    setData({ x: xValues, y: yValues, marker: hoursValues, labels:  labels});
   };
 
   return (
@@ -29,7 +30,7 @@ export default function Home() {
   {data.x.length > 0 && (
     <div className="row justify-content-center mt-4">
       <div className="col-md-12">
-        <Plot xData={data.x} yData={data.y} markerData={data.marker} />
+        <Plot xData={data.x} yData={data.y} markerData={data.marker} labels={data.labels} />
       </div>
     </div>
   )}

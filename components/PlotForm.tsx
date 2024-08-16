@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import LifeUnitSection from './LifeUnitSection';
 
 interface PlotFormProps {
-  onSubmit: (xValues: number[], yValues: number[], hoursValues: number[]) => void;
+  onSubmit: (xValues: number[], yValues: number[], hoursValues: number[], labels: string[]) => void;
 }
 
 const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
@@ -16,20 +16,20 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
   const [hours2, setHours2] = useState<string>('');
   const [hours3, setHours3] = useState<string>('');
 
+  const labels = ['Faith', 'Family', 'Sports'];
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const xValues = [parseFloat(x1), parseFloat(x2), parseFloat(x3)];
     const yValues = [parseFloat(y1), parseFloat(y2), parseFloat(y3)];
     const hoursValues = [parseInt(hours1, 10), parseInt(hours2, 10), parseInt(hours3, 10)];
-    console.log(hoursValues)
-    onSubmit(xValues, yValues, hoursValues);
+    onSubmit(xValues, yValues, hoursValues, labels);
   };
 
   return (
     <form onSubmit={handleSubmit} className="p-4">
       <h3 className="mb-4">Strategic Life Units</h3>
       <LifeUnitSection
-        title="Faith"
+        title={labels[0]}
         importanceValue={x1}
         satisfactionValue={y1}
         hoursPerWeek={hours1}
@@ -38,7 +38,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
         onHoursChange={(e) => setHours1(e.target.value)}
       />
       <LifeUnitSection
-        title="Family"
+        title={labels[1]}
         importanceValue={x2}
         satisfactionValue={y2}
         hoursPerWeek={hours2}
@@ -47,7 +47,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
         onHoursChange={(e) => setHours2(e.target.value)}
       />
       <LifeUnitSection
-        title="Sports"
+        title={labels[2]}
         importanceValue={x3}
         satisfactionValue={y3}
         hoursPerWeek={hours3}

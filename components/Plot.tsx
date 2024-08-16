@@ -4,9 +4,10 @@ interface PlotProps {
   xData: number[];
   yData: number[];
   markerData: number[];
+  labels: string[];
 }
 
-const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData }) => {
+const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels }) => {
   return (
     <Plot
       data={[
@@ -15,6 +16,7 @@ const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData }) => {
           y: yData,
           type: 'scatter',
           mode: 'markers',
+          text: labels,
           marker: { size: markerData },
         },
       ]}
