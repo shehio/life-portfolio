@@ -21,6 +21,7 @@ const PlotForm: React.FC<PlotFormProps> = ({ onSubmit }) => {
     const xValues = [parseFloat(x1), parseFloat(x2), parseFloat(x3)];
     const yValues = [parseFloat(y1), parseFloat(y2), parseFloat(y3)];
     const hoursValues = [parseInt(hours1, 10), parseInt(hours2, 10), parseInt(hours3, 10)];
+    console.log(hoursValues)
     onSubmit(xValues, yValues, hoursValues);
   };
 
