@@ -17,7 +17,10 @@ const PlotComponent: React.FC<PlotProps> = ({ xData, yData, markerData, labels }
           type: 'scatter',
           mode: 'markers',
           text: labels,
-          marker: { size: markerData },
+          marker: {
+            size: markerData,
+            color: 'red'
+          },
         },
       ]}
       layout={{
