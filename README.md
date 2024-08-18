@@ -1,6 +1,5 @@
 # Life Portfolio
-This project works on a person's priorities based on their time portfolio to maximize efficiency and satisfaction.
-
+This project works on a person's priorities based on their time portfolio to maximize efficiency and satisfaction. Currently, it covers a graph to map the state of life.
 
 ### Getting Started
 
