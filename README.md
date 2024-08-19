@@ -1,6 +1,7 @@
 # Life Portfolio
 This project works on a person's priorities based on their time portfolio to maximize efficiency and satisfaction. Currently, it covers a graph to map the state of life.
 
+We hope to provide a framework for people to be more cognizent on how they spend time and what makes them happier.
 ### Getting Started
 
 First, run the development server:
